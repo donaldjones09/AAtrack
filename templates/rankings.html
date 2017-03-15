@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container">
+  <h3>Rankings</h3>
+</div>
+<form class="form-inline">
+  <label class="mr-sm-2" for="inlineFormCustomSelect">Year</label>
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+    <option selected>Choose...</option>
+    <option value="all-time">All-time</option>
+    <option value="2017">2017</option>
+    <option value="2016">2016</option>
+  </select>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Performance</th>
+      <th>Meet</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+</table>
+{% endblock %}
