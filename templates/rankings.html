@@ -5,13 +5,51 @@
   <h3>Rankings</h3>
 </div>
 <form class="form-inline">
-  <label class="mr-sm-2" for="inlineFormCustomSelect">Year</label>
-  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+  <label class="mr-sm-2" for="yearselect">Year</label>
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="yearselect">
     <option selected>Choose...</option>
-    <option value="all-time">All-time</option>
+    <option value="all">All-time</option>
     <option value="2017">2017</option>
     <option value="2016">2016</option>
   </select>
+  
+  <label class="mr-sm-2" for="gradeselect">Grade</label>
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="gradeselect">
+    <option selected>Choose...</option>
+    <option value="all">ALL</option>
+    <option value="12">SR</option>
+    <option value="11">JR</option>
+    <option value="10">SO</option>
+    <option value="9">FR</option>
+    <option value="8">8th</option>
+    <option value="7">7th</option>
+  </select>
+
+  <label class="mr-sm-2" for="eventselect">Event</label>
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="eventselect">
+    <option selected>Choose...</option>
+    <option value="100m">100m Dash</option>
+    <option value="200m">200m Dash</option>
+    <option value="400m">400m Dash</option>
+    <option value="800m">800m Run</option>
+    <option value="1600m">1600m Run</option>
+    <option value="3200m">3200m Run</option>
+    <option value="3000ms">3000m Steeple</option>
+    <option value="110HH">110 HH</option>
+    <option value="400IH">400m IH</option>
+    <option value="4x100m">400m Relay</option>
+    <option value="4x200m">800m Relay</option>
+    <option value="4x400m">1600m Relay</option>
+    <option value="4x800m">3200m Relay</option>
+    <option value="HJ">High Jump</option>
+    <option value="PV">Pole Vault</option>
+    <option value="LJ">Long Jump</option>
+    <option value="TJ">Triple Jump</option>
+    <option value="SP">Shot Put</option>
+    <option value="DT">Discus Throw</option>
+    <option value="Pent">Pentathlon</option>
+  </select>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <table class="table table-striped">
