@@ -15,5 +15,5 @@ def rankings():
 def ranklookup():
     data = request.args.get("q")
     parameters = data.split(",")
-
+    #will return a json array called ranks to script.js to update rankings page
     return jsonify(ranks)
