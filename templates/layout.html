@@ -2,15 +2,27 @@
 
 <html>
   <head>
-
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <meta content="initial-scale=1, width=device-width" name="viewport"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+    <title>AA Track</title>
   </head>
   <body>
-    <div>
-      <h2>Cadets Track and Field</h2>
+    <div class="container">
+      <h2>Albany Academy Track and Field</h2
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('rankings') }}">Rankings</a></li>
+        </ul>
+      </div>
     </div>
     <main>
-      {{}}
-      {{}}
+      {% block main %}
+      {% endblock %}
     </main>
   </body>
 </html>
