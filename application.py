@@ -10,6 +10,8 @@ def index():
 @app.route("/rankings")
 def rankings():
     return render_template("rankings.html")
+
+"""look up rankings of given parameters, return DB rows as JSON array"""
 """
 @app.route("/ranklookup")
 def ranklookup():
