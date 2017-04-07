@@ -9,18 +9,20 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///ranking.db"
 app.config["SQLALCHEMY_ECHO"] = True
 db = SQLAlchemy(app)
 
-class Performances():
-    __tablename__ = "Performances"
-    lastname = db.Column(db.Text)
-    firstname = db.Column(db.Text)
-    date = db.Column(db.Text)
-    performace = db.Column(db.Text)
-    event = db.Column(db.Text)
-    meet = db.Column(db.Text)
+field_events = ["HJ", "PV", "LJ", "TJ", "SP", "DT", "Pent"]
+
+class Performance(db.Model):
+    __tablename__ = "performances"
+    lastname = db.Column(db.String(100))
+    firstname = db.Column(db.String(100))
+    date = db.Column(db.String(100))
+    performance = db.Column(db.String(100))
+    event = db.Column(db.String(100))
+    meet = db.Column(db.String(100))
     graduationyear = db.Column(db.Integer)
+    performance_id = db.Column(db.Integer, primary_key=True)
 
-
-    def __init__(self, lastname, firstname, date, performance, event, meet, graduationyear):
+    def __init__(self, lastname, firstname, date, performance, event, meet, graduationyear, performance_id):
         self.lastname = lastname
         self.firstname = firstname
         self.date = date
@@ -28,7 +30,9 @@ class Performances():
         self.event = event
         self.meet = meet
         self.graduationyear = graduationyear
+        self.performance_id = performance_id
 
+db.create_all()
 
 @app.route("/")
 def index():
@@ -36,12 +40,11 @@ def index():
 
 @app.route("/rankings", methods = ["GET", "POST"])
 def rankings():
-    if request.method == "GET":
+    if request.method == "POST":
         event = request.form.get("eventselect")
         grade = request.form.get("gradeselect")
-        rows = Performances.query.filter_by(Performances.event == event).all()
-        db.session.commit()
+        year = request.form.get("yearselect")
+        rows = Performance.query.all()
         return render_template("rankings.html", rows = rows)
     else:
         return render_template("rankings.html")
-    return render_template("rankings.html")
