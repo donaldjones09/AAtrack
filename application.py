@@ -1,5 +1,5 @@
 from flask import *
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import *
 
 app = Flask(__name__)
 
@@ -41,10 +41,10 @@ def index():
 @app.route("/rankings", methods = ["GET", "POST"])
 def rankings():
     if request.method == "POST":
-        event = request.form.get("eventselect")
-        grade = request.form.get("gradeselect")
-        year = request.form.get("yearselect")
-        rows = Performance.query.all()
+        if request.form.get('eventselect') == "":
+            return render_template("rankings.html")
+        event = request.form.get('eventselect')
+        rows = Performance.query.filter_by(event=event)
         return render_template("rankings.html", rows = rows)
     else:
         return render_template("rankings.html")
