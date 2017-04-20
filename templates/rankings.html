@@ -2,20 +2,25 @@
 
 {% block main %}
 <div class="container">
-  <h3>Rankings</h3>
+  <h3>{{event}} Rankings</h3>
 </div>
 <form class="form-inline" action="{{ url_for('rankings') }}" method="post">
   <fieldset>
     <label class="mr-sm-2" for="yearselect">Year</label>
-    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="yearselect">
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="yearselect" name="yearselect">
       <option selected>Choose...</option>
-      <option value="all">All-time</option>
       <option value="2017">2017</option>
       <option value="2016">2016</option>
+      <option value="2015">2015</option>
+      <option value="2014">2014</option>
+      <option value="2013">2013</option>
+      <option value="2012">2012</option>
+      <option value="2011">2011</option>
+      <option value="2010">2010</option>
     </select>
 
     <label class="mr-sm-2" for="gradeselect">Grade</label>
-    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="gradeselect">
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="gradeselect" name="gradeselect">
       <option selected>Choose...</option>
       <option value="all">ALL</option>
       <option value="12">SR</option>
@@ -27,7 +32,7 @@
     </select>
 
     <label class="mr-sm-2" for="eventselect">Event</label>
-    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="eventselect">
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="eventselect" name="eventselect">
       <option selected>Choose...</option>
       <option value="100m Dash">100m Dash</option>
       <option value="200m Dash">200m Dash</option>
@@ -52,7 +57,7 @@
     </select>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-  </fieldset>  
+  </fieldset>
 </form>
 <table class="table table-striped">
   <thead>
