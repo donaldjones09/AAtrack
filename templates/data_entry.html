@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container">
+  <h3>Results Entry</h3>
+</div>
+<form action="{{ url_for('data_entry') }}" method="post">
+  <fieldset>
+    <label class="mr-sm-2" for="eventselect">Event</label>
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="eventselect" name="eventselect">
+      <option selected>Choose...</option>
+      <option value="100m Dash">100m Dash</option>
+      <option value="200m Dash">200m Dash</option>
+      <option value="400m Dash">400m Dash</option>
+      <option value="800m Run">800m Run</option>
+      <option value="1600m Run">1600m Run</option>
+      <option value="3200m Run">3200m Run</option>
+      <option value="3000m Steeple">3000m Steeple</option>
+      <option value="110HH">110 HH</option>
+      <option value="400IH">400m IH</option>
+      <option value="4x100m">400m Relay</option>
+      <option value="4x200m">800m Relay</option>
+      <option value="4x400m">1600m Relay</option>
+      <option value="4x800m">3200m Relay</option>
+      <option value="HJ">High Jump</option>
+      <option value="PV">Pole Vault</option>
+      <option value="LJ">Long Jump</option>
+      <option value="TJ">Triple Jump</option>
+      <option value="SP">Shot Put</option>
+      <option value="DT">Discus Throw</option>
+      <option value="Pent">Pentathlon</option>
+    </select>
+    <div class="form-group">
+      <input autocomplete="off" autofocus class="form-control" name="firstname" placeholder="Firstname:" type="text"/>
+    </div>
+    <div class="form-group">
+      <input class="form-control" name="lastname" placeholder="Lastname:" type="text"/>
+    </div>
+    <div class="form-group">
+      <input class="form-control" name="performance" placeholder="performance (feet-inches) or (mm:ss.ms):" type="text"/>
+    </div>
+    <div class="form-group">
+      <input class="form-control" name="year" placeholder="year (yyyy):" type="text"/>
+    </div>
+    <div class="form-group">
+      <input class="form-control" name="meet" placeholder="meet name:" type="text"/>
+    </div> 
+    <button type="submit" class="btn btn-default">Submit</button>
+  </fieldset>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container">
+  <h3>School Records</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Name</th>
+        <th>Performance</th>
+        <th>Date</th>
+        <th>Meet</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for record in records %}
+      <tr>
+        <td class = "c1">{{record['event']}}</td>
+        <td class = "c2">{{record['firstname']}} {{record['lastname']}}</td>
+        <td class = "c3">{{record['performance']}}</td>
+        <td class = "c4">{{record['date']}}</td>
+        <td class = "c5">{{record['meet']}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
