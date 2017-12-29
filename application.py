@@ -111,7 +111,7 @@ def data_entry():
             newrows = sorted(rows, key=lambda x:x.performance_id, reverse = True)
             first = newrows[0]
             performance_id = first.performance_id + 1
-            db.session.add(Performance(fname, lname, year, performance, event, meet, gradyear, performance_id))
+            db.session.add(Performance(lname, fname, year, performance, event, meet, gradyear, performance_id))
             db.session.commit()
         return redirect(url_for("rankings"))
     else:
